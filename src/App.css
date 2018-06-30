@@ -1,0 +1,106 @@
+body{
+  background-color: #97cbff;
+}
+.slider{
+  background-color: #222;
+height: 100%;
+  width: 20%;
+  color: white;
+  position: fixed;
+}
+.h-head{
+  background-color: #9a5858;
+  height: 9%;
+}
+.link{
+  color: #fff;
+text-decoration: none;
+}
+.infowindo{
+  font-size: 1em;
+}
+.list{
+margin-bottom: 10%;
+border-style: outset;
+}
+.Search-bar{
+  margin-top: 17%;
+  margin-left: 8%;
+  width: 90%;
+  height: 3%;
+  border-radius: 1%;
+}
+.Search-bar-title{
+  font-size: 10px;
+    margin: 51% 0 0 2%;
+  }
+  .map{
+    margin-left: 9% !important;
+  width: 91% !important;
+  }
+  .list-menu{
+    margin-top: 14%;
+}
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 4%;
+  height: 4%;
+  left: 2%;
+  top: 2%;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #fff;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #536a7c;
+  padding: 2.5em 0 0;
+  font-size: 1em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #fff;
+  padding: 0.8em;
+}
+.menu-title{
+      font-size: 19px;
+
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+
+
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
