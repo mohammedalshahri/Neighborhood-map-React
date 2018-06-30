@@ -52,29 +52,35 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const p = this.state.myMarker
-        p.map((ress)=>{
+    const temp = this.state.myMarker
+        temp.map((ress)=>{
 return(
-      fetch('https://api.foursquare.com/v2/venues/'+ress.id+"?&client_secret=PGG53ZQZSKZCSGQ1WCJLN0P4HTYWDCMMK2ZVT5TJTDPELK2I&client_id=BHGL1GBNXCOS2EBREZZMZM2N1TEQI2MOYRQZDCMZ5UU4RZFP&v=20180629")
-
+      fetch('https://api.foursquare.com/v2/venues/'+ress.id+"?&client_secret=SPWJKXYP5XDFFSSBCTZ3F0NQQZXMAZB1L0MRXNWAN3WODKR0&client_id=3BJNU223FDTYXD4W4HZBWCDXHEIL3LXIYOD3U230BZQEHBDS&v=20180629")
       .then(res => res.json())
       .then((result) => {
         ress.name =result.response.venue.name
         ress.contact = result.response.venue.contact.formattedPhone
 
        })
+
      )
+
     })
-    this.setState({place:p})
+       this.setState({myMarker:temp})
+
+
   }
 
 
-    onMarkerClick = (props, marker, e) =>
-      this.setState({
-        selectedPlace: props,
-        activeMarker: marker,
-        showingInfoWindow: true
-      });
+  onMarkerClick = (location) =>{
+    console.log(location);
+  this.setState({
+    position: {lat:location.position.lat, lng:location.position.lng },
+    showingInfoWindow: true,
+    name: location.title,
+    contact: location.cont
+  });
+}
 
 
      onMapClicked = (props) => {
@@ -86,7 +92,7 @@ return(
    }
  };
   render() {
-  console.log(this.state.activeMarker);
+  console.log(this.state.myMarker);
 console.log(this.state.selectedPlace);
     return (
         <div className="App">
@@ -98,19 +104,20 @@ console.log(this.state.selectedPlace);
           lng: 46.683499
         }}
         zoom={15} >
-        {this.state.place.map((res)=>{
+        {this.state.myMarker.map((res)=>{
           return(
         <Marker key={res.id} title={res.name} position={{lat:res.lat ,lng:res.lng}} onClick={this.onMarkerClick} cont={res.contact}/>
          )
        })}
 
        <InfoWindow
-           marker={this.state.activeMarker}
-           visible={this.state.showingInfoWindow}>
-             <div>
-               <h1>{this.state.selectedPlace.name}</h1>
-             </div>
-         </InfoWindow>
+               position={this.state.position}
+               visible={this.state.showingInfoWindow}>
+                  <div>
+               <h7>Name: {this.state.name}</h7>
+               <h7>Name: {this.state.contact}</h7>
+               </div>
+             </InfoWindow>
 
         </Map>
         <Slidemenu loc ={this.state.myMarker}/>
