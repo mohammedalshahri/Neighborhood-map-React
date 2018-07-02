@@ -20,8 +20,16 @@ text-decoration: none;
   font-size: 1em;
 }
 .list{
-margin-bottom: 10%;
-border-style: outset;
+  width: 93%;
+      height: 3em;
+      display: block;
+      margin-top: 7%;
+      color: #f9fcff;
+      background-color: #494c4e;
+      border: none;
+}
+.heading{
+    color: #828f9c;
 }
 .Search-bar{
   margin-top: 17%;
@@ -29,6 +37,10 @@ border-style: outset;
   width: 90%;
   height: 3%;
   border-radius: 1%;
+  display: block;
+outline: none;
+border: none;
+
 }
 .Search-bar-title{
   font-size: 10px;
